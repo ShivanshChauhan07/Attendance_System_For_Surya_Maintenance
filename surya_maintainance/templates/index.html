@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Attendance Sheet</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet"  type="text/css" href="static/style.css" />
+		<link rel="icon" href="static/image/favicon.ico">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+	</head>
+	<body style="background-color:#DAEAF1;font-family: 'IBM Plex Sans', sans-serif;">
+
+	<nav class="navbar navbar-dark bg-primary">
+		<span class="navbar-brand mb-0 h1"><img src="static/image/logo.jpg" width=15% height=15% alt="" style="border-radius: 100%;"> Surya Maintainance Pvt Ltd</span>
+		 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('home')}}">Home Page <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">About Us</a>
+      </li>
+    </ul>
+  </div>
+
+	</nav>
+
+
+
+
+	<div class="heading">
+		<div class="heading_dive_1">
+   	 	<h1 style="width: 50%; margin:0 auto 0 auto; position: relative; left: 10%;font-size: 50px;">Staff Attendance Record</h1>
+		<h2 style="width: 55%; margin:2% auto 2% auto; position: relative; left: 22%;">Surya Maintainance Agency Pvt Ltd</h2>
+		<h3 style="width: 20%; margin:2% auto 0 auto; position: relative; left: 37%;">Site:- Ring Road Mall</h3>
+		</div>
+	</div>
+
+	<section class="testimonial">
+
+		<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+ 			 <div class="carousel-inner">
+				 <h1 style="padding-bottom: 2%;"> Milestone of the Mall</h1>
+    				<div class="carousel-item active">
+
+						<img src="static/image/mall1.jpg" width=200px height=210px class="testimonial-img">
+						<h2 style="padding-top: 3%;"> Serving for the Business </h2>
+    				</div>
+    				<div class="carousel-item">
+
+						<img src="static/image/mall2.jpg" width=200px height=210px class="testimonial-img">
+						<h2 style="padding-top: 3%;"> Security that feels you safe </h2>
+    				</div>
+    				<div class="carousel-item">
+
+						<img src="static/image/mall3.jpg" width=200px height=210px class="testimonial-img">
+						<h2 style="padding-top: 3%;"> Prime Location  </h2>
+    				</div>
+  			</div>
+		</div>
+	</section>
+
+
+
+
+<div class="form-group">
+	<div class="form">
+		<h2 style="text-align: center;padding-bottom: 5%; font-size: 2.5rem;"> <strong> Employees Details </strong> </h2>
+		<form method="POST" action="{{url_for('home')}}">
+
+			{{ form.csrf_token }}
+			<p>
+				<span style="margin-right: 25%;">{{form.firstName.label}}</span> <span style="margin-left: 2%;"> {{form.firstName(size=30,value=data.Name,disabled=true) }}  </span>  <br>
+
+			</p>
+
+			<p>
+				<span style="margin-right: 24%;"> {{form.Designation.label}}</span> <span style="margin-left: 1.5%;">{{form.Designation(size=30,value=data.Designation,disabled=true)}}</span><br>
+			</p>
+			<p>
+			<span style="margin-right: 34%;"> {{form.shift.label}}</span> <span style="margin-left: 1%;"> {{form.shift(size=30,disabled=true)}} </span> <br>
+			</p>
+			<p>
+				<span style="margin-right: 30%;"> {{form.time_in.label}}</span> <span style="margin-left: 1%"> {{form.time_in(size=30,value = curTime,disabled=true)}} </span>
+			</p>
+			<p>
+				<span style="margin-right: 29%;"> {{form.time_out.label}}</span> <span style="margin-left: 1%;"> {{form.time_out(size=30,disabled=true)}} </span>
+			</p>
+			<p> {{form.submit(class_='btn btn-primary')}}</p>
+
+
+		</form>
+
+	</div>
+	<div class="Images">
+		<img src="static/image/{{loc}}" width="35%" style="margin: 5% 0 5% 10%">
+	</div>
+	</div>
+
+	<div class="footer">
+		<p> © 2022 Shivansh Chauhan</p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+	</body>
+</html>

@@ -1,0 +1,45 @@
+body{
+background-color: #C1EFFF;
+font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.heading{
+background-color: #1F4690;
+margin: 5% 0% 1%;
+
+}
+.heading_dive_1{
+font-family: 'IBM Plex Sans', sans-serif;
+margin: 0 auto 0 auto;
+color: #fff;
+}
+
+.testimonial{
+background-color: #1F4690;
+padding: 4% 5% 4%;
+text-align: center;
+margin: 12% 0% 4%;
+color: #fff;
+
+}
+
+.testimonial-img{
+border-radius: 100%;
+}
+.form-group{
+display: flex;
+
+}
+.form{
+width: 50%;
+}
+.Images{
+margin: 5% auto 5%;
+}
+
+.footer{
+background-color: #1F4690;
+text-align: center;
+padding: 2% 2% 0.5%;
+color: #fff;
+}
